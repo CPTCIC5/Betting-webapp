@@ -1,0 +1,538 @@
+{% extends "base.html" %}
+{% block title %} Trends {% endblock title %}
+{% load static %}
+{% block body %} 
+
+    <div class="container-fluid " style="padding: 0;">
+      <div class="balance px-3 hii py-2 text-center">
+        <h5>Partity Record</h5>
+      </div>
+   
+        <div class="parity p-3" style="display: flex;flex-direction: row;align-items: center;justify-content: space-evenly;box-shadow: 1px 2px 10px rgb(172, 170, 170);">
+          <div class="period">
+            <p><i class="fa-solid fa-calendar-days"></i> &nbsp; <strong>Period:</strong> </p>
+            <span class="parspans">20231102206</span>
+          </div>
+          <div class="balance px-3 bye py-2 text-center">
+            <p>&nbsp;User: +91-900000000</p>
+              <h5>Parity Record</h5>
+          </div>
+            <div id="timer">
+            </div>
+        </div><br>
+   
+    </div>
+<br>
+    <!-- Record -->
+    <div class="container-fluid">
+      <hr class="mt-2">
+      <h4 class="text-center">Result</h4><hr>
+      <div class="d-flex flex-row justify-content-evenly align-items-center">
+        <p class="redresult bg-danger text-light p-2 rounded">Red :85</p>
+        <p class="violetresult text-light p-2 rounded" style="background-color: rgb(192, 71, 192);">Violet :55</p>
+        <p class="greenresult bg-success text-light p-2 rounded">Green :75</p>
+      </div>
+
+      <div class="buttons">
+        <p class="btns active btntable">Table View</p>
+        <p class="btns btnprogress">Progress View</p>
+      </div>
+
+
+      <!-- <div class="container-fluid parcols" style="overflow-x: scroll;width: 100%;">
+        <div class="row">
+          <div class="col">
+           <b>1.</b>
+          </div>
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+          <div class="col">
+            <div class="greencol">
+              1
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col">
+           <b>2.</b>
+          </div>
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+          <div class="col">
+            <div class="greencol">
+              1
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="redcol">
+              2
+            </div>
+          </div>
+
+          
+        </div>
+      
+      </div> -->
+      <table class="table table-bordered text-center parcols w-100 table-view"  >
+        <thead style="overflow-x: scroll;width: 100%;">
+          <tr >
+            <th scope="col" >1</th>
+            <th scope="col"><div>
+              <div class="redcol text-center" >2</div>
+            </div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+
+
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+          </tr>
+
+          <tr >
+            <th scope="col" >2</th>
+            <th scope="col"><div>
+              <div class="redcol text-center" >2</div>
+            </div></th>
+            <th scope="col"><div class="redcol text-center">6</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"><div class="greencol text-center">1</div></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="greencol text-center">3</div></th>
+            <th scope="col"><div class="redcol text-center">4</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="violet-greencol text-center">5</div></th>
+            <th scope="col"><div class="violet-redcol text-center">0</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+            <th scope="col"><div class="redcol text-center">2</div></th>
+          </tr>
+
+          <tr >
+            <th scope="col" >3</th>
+            <th scope="col"><div>
+              <div class="redcol text-center" >2</div>
+            </div></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col"><div>
+              <div class="redcol text-center" >2</div>
+            </div></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            <th scope="col" ></th>
+            </tr>
+        </thead>
+      
+      </table>
+
+<div class="proview hide"><br>
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-danger rounded" role="progressbar" style="width: 85%;height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Red 85</div>
+  </div><br>
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar rounded" role="progressbar" style="width: 55%;background-color: rgb(192, 71, 192); height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Violet 55</div>
+  </div>
+<br>
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-success rounded" role="progressbar" style="width: 75%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Green 75</div>
+  </div><br>
+
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 20%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0 20</div>
+  </div><br>
+
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 35%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">1 35</div>
+  </div><br>
+
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 55%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">2 50</div>
+  </div><br>
+
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 35%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">3 35</div>
+  </div><br>
+
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 20%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">4 20</div>
+  </div><br>
+
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 35%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">5 35</div>
+  </div><br>
+
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 20%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">6 20</div>
+  </div><br>
+
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 35%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">7 35</div>
+  </div><br>
+
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 20%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">8 20</div>
+  </div><br>
+
+  <div class="progress" style="height: 25px;">
+    <div class="progress-bar bg-primary rounded" role="progressbar" style="width: 35%; height: 25px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">9 35</div>
+  </div><br>
+</div>
+     
+    </div>
+<br><br><br><br>
+<script>
+  var btntable=document.querySelector('.btntable')
+var btnprogress=document.querySelector('.btnprogress')
+var table_view=document.querySelector('.table-view')
+var proview=document.querySelector('.proview')
+btntable.addEventListener('click',()=>{
+    table_view.classList.remove('hide')
+    proview.classList.add('hide')
+    btnprogress.classList.remove('active')
+    btntable.classList.add('active')
+})
+
+btnprogress.addEventListener('click',()=>{
+    table_view.classList.add('hide')
+    proview.classList.remove('hide')
+    btnprogress.classList.add('active')
+    btntable.classList.remove('active')
+})
+</script>
+{% endblock body %}

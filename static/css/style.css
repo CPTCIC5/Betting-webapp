@@ -1,0 +1,38 @@
+
+
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+  
+}
+.navbar{
+    box-shadow: 5px 5px 30px rgba(176, 174, 174, 0.914);
+}
+
+.hii{
+    display: none;
+}
+
+.navbar-nav{
+    justify-content: space-evenly;
+}
+.parspans{
+    font-size: 18px;
+}
+.period,.timer .fa-solid{
+    font-size: 18px;
+}
+.bye{
+    display: block;
+}
+
+@media screen and (max-width:800px) {
+    .hii{
+        display: block;
+    }
+    .bye{
+        display: none;
+    }
+}
