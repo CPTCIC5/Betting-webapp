@@ -258,7 +258,11 @@
       }
   }
 
-
+  @media screen and (max-width:400px) {
+    table{
+      font-size: 12px;
+    }
+  }
 
 /* html *{
     -webkit-font-smoothing: antialiased;

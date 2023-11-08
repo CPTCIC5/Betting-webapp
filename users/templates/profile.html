@@ -26,7 +26,45 @@
 
 {% block body %}
   <div class="register-photo">
+
     <div class="form-container">
+       <!-- mobile -->
+       <div class="mob">
+        <br>
+        <div class="card profile1 mb-3 active">
+          <div class="card-body" style="display: flex;justify-content: space-between; align-items: center;">
+            <div class="text-center">
+              <i class="fa-solid fa-user text-center"></i> <br><span>Profile</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="card orders1 mb-3">
+          <div class="card-body" style="display: flex;justify-content: space-between; align-items: center;">
+            <div class="text-center">
+              <i class="fa-solid fa-user"></i><br> Orders
+            </div>
+          </div>
+        </div>
+  
+        <div class="card about1 mb-3">
+          <div class="card-body" style="display: flex;justify-content: space-between; align-items: center;">
+            <div class="text-center">
+              <i class="fa-solid fa-user"></i><br> About
+            </div>
+  
+          </div>
+        </div>
+  
+        <div class="card cs1 mb-3">
+          <div class="card-body" style="display: flex;justify-content: space-between; align-items: center;">
+            <div class="text-center">
+              <i class="fa-solid fa-user"></i><br> Complaints/<br>Suggestions
+            </div>
+          </div>
+        </div>
+  
+      </div>
       <div class="image-holder px-2">
         <div class="lap">
 
@@ -68,43 +106,7 @@
 
         </div>
         <br>
-        <!-- mobile -->
-        <div class="mob">
-          <br>
-          <div class="card profile1 mb-3 active">
-            <div class="card-body" style="display: flex;justify-content: space-between; align-items: center;">
-              <div class="text-center">
-                <i class="fa-solid fa-user text-center"></i> <span>Profile</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="card orders1 mb-3">
-            <div class="card-body" style="display: flex;justify-content: space-between; align-items: center;">
-              <div class="text-center">
-                <i class="fa-solid fa-user"></i> Orders
-              </div>
-            </div>
-          </div>
-
-          <div class="card about1 mb-3">
-            <div class="card-body" style="display: flex;justify-content: space-between; align-items: center;">
-              <div class="text-center">
-                <i class="fa-solid fa-user"></i> About
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card cs1 mb-3">
-            <div class="card-body" style="display: flex;justify-content: space-between; align-items: center;">
-              <div class="text-center">
-                <i class="fa-solid fa-user"></i> Complaints/Suggestions
-              </div>
-            </div>
-          </div>
-
-        </div>
+       
       </div>
 
       <form class="profilecon" method="post">
@@ -127,83 +129,135 @@
             </div>
           </div>
 
-          <div style="display: flex;width: 100%; flex-direction: row; justify-content: space-evenly;">
+          <div style="display: flex;width: 100%; flex-direction: row; justify-content: space-evenly;align-items: center;">
 
-            <button class="mb-3 btn btn-outline-primary">Coins 38576</button> &nbsp;&nbsp;
-
-
-            <button class="mb-3 btn btn-outline-primary">Award ₹0</button>&nbsp;&nbsp;
+            <button class="mb-3 btn btn-outline-primary">Coins 38576</button>
 
 
-            <button class="mb-3 btn btn-outline-primary">Interest ₹1000</button>
+            <button class="mb-3 btn btn-outline-primary">Award ₹0</button>
+
+
 
           </div>
-          <br>
-          <a href="{% url 'users:logout' %}">
-            <button class="btn btn-danger w-100" type="submit">Logout</button>
-          </a>
+
+          <div class="d-flex flex-row justify-content-center align-items-center mt-2">
+            <a href="{% url 'users:logout' %}" class="m-2">
+              <button class="btn btn-primary w-100" type="submit">Recharge</button>
+            </a>
+            <a href="{% url 'users:logout' %}">
+              <button class="btn btn-danger w-100" type="submit">Logout</button>
+            </a>
+          </div>
+          
         </div>
       </form>
       </center>
-      <br>
       <!-- Orders -->
       <form class="hide ordercon" method="post">
         <div class="container">
-
-          <h2 class="text-center">All Orders</h2><br>
-
           <table class="table text-center">
-            <thead class="table-dark">
-              <tr>
-                <th scope="col">Period</th>
-                <th scope="col">Price</th>
-                <th scope="col">Number</th>
-                <th scope="col">Result</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">20231102206</th>
-                <td>100</td>
-                <td>4</td>
-                <td>
-                  <div class="red"></div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">20231102206</th>
-                <td>100</td>
-                <td>4</td>
-                <td>
-                  <div class="green"></div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">20231102206</th>
-                <td>100</td>
-                <td>4</td>
-                <td>
-                  <div class="violet"></div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">20231102206</th>
-                <td>100</td>
-                <td>4</td>
-                <td>
-                  <div class="violet-red"></div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">20231102206</th>
-                <td>100</td>
-                <td>4</td>
-                <td>
-                  <div class="violet-green"></div>
-                </td>
-              </tr>
-            </tbody>
+            <tr class="table-dark">
+              <th>Period</th>
+              <th>Price</th>
+              <th>Number</th>
+              <th>Result</th>
+            </tr>
+            <tr>
+              <td>20231102206</td>
+              <td>100</td>
+              <td>4</td>
+              <td><div class="red"></div></td>
+            </tr>
+
+            <tr>
+              <td>20231102206</td>
+              <td>100</td>
+              <td>4</td>
+              <td><div class="red"></div></td>
+            </tr>
+
+            <tr>
+              <td>20231102206</td>
+              <td>100</td>
+              <td>4</td>
+              <td><div class="red"></div></td>
+            </tr>
+
+            <tr>
+              <td>20231102206</td>
+              <td>100</td>
+              <td>4</td>
+              <td><div class="red"></div></td>
+            </tr>
+
+            <tr>
+              <td>20231102206</td>
+              <td>100</td>
+              <td>4</td>
+              <td><div class="red"></div></td>
+            </tr>
           </table>
+          <center><a href="{% url 'users:precord' %}" class="text-center btn btn-dark">More Records</a><h4 ></h4></center>
+          <!-- <div class="container-fluid">
+            <hr class="mt-2">
+            <h4 class="text-center">Record</h4><hr>
+            <table class="table text-center">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">Period</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Number</th>
+                  <th scope="col">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">20231102206</th>
+                  <td>100</td>
+                  <td>4</td>
+                  <td>
+                    <div class="red"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">20231102206</th>
+                  <td>100</td>
+                  <td>4</td>
+                  <td>
+                    <div class="green"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">20231102206</th>
+                  <td>100</td>
+                  <td>4</td>
+                  <td>
+                    <div class="violet"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">20231102206</th>
+                  <td>100</td>
+                  <td>4</td>
+                  <td>
+                    <div class="violet-red"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">20231102206</th>
+                  <td>100</td>
+                  <td>4</td>
+                  <td>
+                    <div class="violet-green"></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+            
+            </div>
+            
+          </div> -->
         </div>
 
       </form>
@@ -266,7 +320,7 @@
           </div>
         </center><br>
       </form>
-
+<br><br><br>
 
     </div>
   </div>

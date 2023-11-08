@@ -6,3 +6,6 @@ def parity(request):
 
 def trends(request):
     return render(request,'main/paritytrend.html')
+
+def precord(request):
+    return render(request,'main/parityrecord.html')

@@ -7,6 +7,9 @@ from django.contrib import messages
 def risk_agreement(request):
     return render(request,'risk.html')
 
+def precord(request):
+    return render(request,'parityrecord.html')
+
 def orders(request):
     return render(request,'orders.html')
 

@@ -5,5 +5,6 @@ app_name='main'
 
 urlpatterns = [
     path('',views.parity,name='parity'),
-    path('trend/',views.trends,name='trend')
+    path('trend/',views.trends,name='trend'),
+    path('precord/',views.precord,name='precord')
 ]
