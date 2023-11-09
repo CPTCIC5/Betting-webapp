@@ -77,7 +77,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backends.wsgi.application'
 AUTH_USER_MODEL = 'users.User'
 LOGOUT_REDIRECT_URL = 'users:login'
-
+LOGIN_REDIRECT_URL = 'home:index'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
