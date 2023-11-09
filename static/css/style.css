@@ -246,6 +246,11 @@ font-size: 16px;
     }
 }
 
+.card{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 @media screen and (max-width:800px) {
     .hii{
         display: block;

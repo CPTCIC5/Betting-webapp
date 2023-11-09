@@ -73,8 +73,11 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'backends.wsgi.application'
 AUTH_USER_MODEL = 'users.User'
+LOGOUT_REDIRECT_URL = 'users:login'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

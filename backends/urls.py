@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('landing.urls')),
     path('game/',include('main.urls')),
-    path('profile/',include('users.urls'))
+    path('profile/',include('users.urls')),
+    path('password-reset/',views.PasswordResetView.as_view(),name='password_reset'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,

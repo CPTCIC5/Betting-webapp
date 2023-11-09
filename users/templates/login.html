@@ -17,10 +17,11 @@
 		<div class="image-holder"></div>
 
 		<form method="post">
+			{% csrf_token %}
 			<h2 class="text-center"><strong>Login</strong> an account.</h2>
 
 			<div class="form-group">
-				<input class="form-control py-2" type="text" name="phone" placeholder="Mobile Number">
+				<input class="form-control py-2" type="text" name="phone_number" placeholder="Mobile Number">
 			</div><br>
 
 			<div class="form-group">
