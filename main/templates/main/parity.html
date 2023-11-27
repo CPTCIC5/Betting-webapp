@@ -4,7 +4,7 @@
     {% block file %}<link rel="stylesheet" href="{% static '/css/profile.css' %}">  
     <!-- <marquee behavior="" direction="" style="background-image: linear-gradient(to right,blue,rgb(119, 0, 255));  padding: 3px;color: white;">Winner is <span style="color: red;text-shadow: 1px 1px black;">Red</span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -->
    
-<div class="marquee marquee_hoverpause marquee--borders" style="--duration: 30s;   transform: skewY(-0deg);">
+<div class="marquee marquee_hoverpause marquee--borders" style="--duration: 10s;   transform: skewY(-0deg);">
   <div class="marquee__group">
     <p class="h4">Colour Result is Red 🔴✨ </p>&nbsp;
     <p class="h4" aria-hidden="true">Total Price is 450000 ✨</p>&nbsp;
@@ -39,7 +39,7 @@
             <span class="parspans">20231102206</span>
           </div>
           <div class="balance px-3 py-2 text-center">
-            <p>&nbsp;User: +91-900000000</p>
+            <p>&nbsp;User: +91-{{user.phone_number}}</p>
               <h5 class="mb-3">Available Coins:0.00</h5>
               <a href=""  style="text-decoration: none;"> <button class="btn btn-success">Recharge</button> </a>
              <a href="{% url 'main:trend' %}" style="text-decoration: none;"> <button class="btn btn-info text-light">Trends</button></a>
@@ -48,7 +48,8 @@
             </div>
         </div><br>
         <div class="btns mx-5">
-
+<form action="" method="post">
+  {% csrf_token %} 
 <!-- green -->
 <div class="modal fade" id="green" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -125,7 +126,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -207,7 +208,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -289,7 +290,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -371,7 +372,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -453,7 +454,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -535,7 +536,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -617,7 +618,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -699,7 +700,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -781,7 +782,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -863,7 +864,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -944,7 +945,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -1026,7 +1027,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
@@ -1109,12 +1110,13 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" onclick="addinp(this)">Confirm</button>
+        <button type="button" class="btn btn-success" >Confirm</button>
       </div>
     </div>
   </div>
 </div>
-
+<input type="submit" value="" id="confbtn">
+</form>
 
 
 

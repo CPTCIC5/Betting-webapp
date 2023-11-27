@@ -3,152 +3,218 @@
 
 {% block title %} Homie {% endblock title %}
 {% block body %}
-<div id="carouselExampleCaptions" class="carousel slide rounded" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="img-carousel">
-                <img src="{% static '/images/1.jpg' %}" class="d-block" alt="..." >
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="img-carousel">
-                <img src="{% static '/images/2.jpg' %}" class="d-block" alt="..." >
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="img-carousel">
-                <img src="{% static '/images/3.jpg' %}" class="d-block" alt="..." >
-            </div>
+<center>
+    <div class="loader"></div>
+</center>
 
+<body  onload="myfunc()">
+    
+    <div id="carouselExampleCaptions" class="carousel slide rounded hide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="img-carousel">
+                    <img src="https://image.lexica.art/full_webp/7c43466d-2e16-4f37-9bab-4fda7d23adb8" class="d-block" alt="..." >
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="img-carousel">
+                    <img src="https://image.lexica.art/full_webp/9217e62f-200e-49df-ba2d-f356845781d2" class="d-block" alt="..." >
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="img-carousel">
+                    <img src="https://image.lexica.art/full_webp/1b3a582c-ae67-464e-9566-644c87a81752" class="d-block" alt="..." >
+                </div>
+    
+            </div>
         </div>
+    
     </div>
-
-</div>
-<br>
-
-<div class="container-fluid">
-    <div class="card1 w-100">
-        <div class="cardbody border p-2">
-            <div class="main-img">
-                <div class="img">
-                    <img src="{% static '/images/watch.jpg' %}" alt="" class="w-100">
+    <br>
+ 
+    <div class="container-fluid hide">
+        <div class="card1 w-100">
+            <div class="cardbody border p-2" >
+                <div class="mai" onclick="btnclik()">
+                    <div class="main-img">
+                        <div class="img">
+                            <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/f0b79ae043f96db23a7b71063265844a/l/o/louis-moinet-mechanical-wonders-lm-84-20-31_1.jpg?tr=w-166,h-250" alt="" class="w-100">
+                        </div>
+                    </div>
+                   <br>
+                    <div>
+                        <h5>LOUIS MOINET
+                            MECHANICAL WONDERS </h5>
+                        <p> ₹ 308576.00</p>
+                    </div>
+                </div>
+                <div class="outt hide">
+                    <center>
+                        <p class="text-danger">Out Of Stock</p>
+                    </center>
                 </div>
             </div>
-           <br>
-            <div>
-                <h5>LOUIS MOINET
-                    MECHANICAL WONDERS </h5>
-                <p> ₹ 308576.00</p>
-            </div>
-        </div>
-
-        <div class="cardbody border p-2">
-            <div class="main-img">
-                <div class="img">
-                    <img src="{% static '/images/watch2.jpg' %}" alt="" class="w-100">
+    
+            <div class="cardbody border p-2">
+                <div class="mai" onclick="btnclik1()">
+                <div class="main-img">
+                    <div class="img">
+                        <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/h/-/h-moser-endeavour-1804-0403-large.jpg" alt="" class="w-100">
+                    </div>
+                </div>
+               <br>
+                <div>
+                    <h5>H. MOSER & CIE.
+                        ENDEAVOUR</h5>
+                    <p> ₹ 808576.00</p>
+                </div>
+                </div>
+                <div class="outt1 hide">
+                    <center>
+                        <p class="text-danger">Out Of Stock</p>
+                    </center>
                 </div>
             </div>
-           <br>
-            <div>
-                <h5>H. MOSER & CIE.
-                    ENDEAVOUR</h5>
-                <p> ₹ 808576.00</p>
-            </div>
-        </div>
-
-        
-
-        <div class="cardbody border p-2">
-            <div class="main-img">
-                <div class="img">
-                    <img src="{% static '/images/watch3.jpg' %}" alt="" class="w-100">
+    
+            <div class="cardbody border p-2" >
+                <div class="mai" onclick="btnclik2()">
+                    <div class="main-img">
+                        <div class="img">
+                            <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/f0b79ae043f96db23a7b71063265844a/r/a/raymond-weil-freelancer-2780-st-ind01.jpg?tr=w-182,h-277" alt="" class="w-100">
+                        </div>
+                    </div>
+                   <br>
+                    <div>
+                        <h5>ETERNA
+                            KONTIKI 1948 Legacy Automatic </h5>
+                        <p> ₹ 208576.00</p>
+                    </div>
+                </div>
+               
+                <div class="outt2 hide">
+                    <center>
+                        <p class="text-danger">Out Of Stock</p>
+                    </center>
                 </div>
             </div>
-           <br>
-            <div>
-                <h5>ETERNA
-                    KONTIKI 1948 Legacy Automatic </h5>
-                <p> ₹ 208576.00</p>
-            </div>
-        </div>
-
-        <div class="cardbody border p-2">
-            <div class="main-img">
-                <div class="img">
-                    <img src="{% static '/images/watch4.jpg' %}" alt="" class="w-100">
+    
+            <div class="cardbody border p-2">
+                <div class="mai" onclick="btnclik3()">
+                    <div class="main-img">
+                        <div class="img">
+                            <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/f0b79ae043f96db23a7b71063265844a/a/r/arnold-son-luna-magna-1lmar-z01a-c211r.jpg?tr=w-182,h-277" alt="" class="w-100">
+                        </div>
+                    </div>
+                   <br>
+                    <div>
+                        <h5>ARNOLD & SON
+                            Luna Magna Red Gold Meteorite</h5>
+                        <p> ₹ 578576.00</p>
+                    </div>
+                </div>
+             
+                <div class="outt3 hide">
+                    <center>
+                        <p class="text-danger">Out Of Stock</p>
+                    </center>
                 </div>
             </div>
-           <br>
-            <div>
-                <h5>ARNOLD & SON
-                    Luna Magna Red Gold Meteorite</h5>
-                <p> ₹ 578576.00</p>
-            </div>
-        </div>
-
-        <div class="cardbody border p-2">
-            <div class="main-img">
-                <div class="img">
-                    <img src="{% static '/images/watch5.jpg' %}" alt="" class="w-100">
+    
+            <div class="cardbody border p-2">
+                <div class="mai" onclick="btnclik4()">
+                    <div class="main-img">
+                        <div class="img">
+                            <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/f0b79ae043f96db23a7b71063265844a/f/a/favre-leuba-raider-00-10105-06-45-45.jpg?tr=w-166,h-250" alt="" class="w-100">
+                        </div>
+                    </div>
+                   <br>
+                    <div>
+                        <h5>FAVRE LEUBA
+                            Raider Bivouac 9000 </h5>
+                        <p> ₹ 608576.00</p>
+                    </div>
+                </div>
+             
+                <div class="outt4 hide">
+                    <center>
+                        <p class="text-danger">Out Of Stock</p>
+                    </center>
                 </div>
             </div>
-           <br>
-            <div>
-                <h5>FAVRE LEUBA
-                    Raider Bivouac 9000 </h5>
-                <p> ₹ 608576.00</p>
-            </div>
-        </div>
-
-        <div class="cardbody border p-2">
-            <div class="main-img">
-                <div class="img">
-                    <img src="{% static '/images/watch6.jpg' %}" alt="" class="w-100">
+    
+            <div class="cardbody border p-2">
+                <div class="mai" onclick="btnclik5()">
+                    <div class="main-img">
+                        <div class="img">
+                            <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/f0b79ae043f96db23a7b71063265844a/c/h/chronoswiss-delphis-ch-1423-1-bkbl.jpg?tr=w-166,h-250" alt="" class="w-100">
+                        </div>
+                    </div>
+                   <br>
+                    <div>
+                        <h5>CHRONOSWISS
+                            Delphis Venture</h5>
+                        <p> ₹ 1508576.00</p>
+                    </div>
+                </div>
+                <div class="outt5 hide">
+                    <center>
+                        <p class="text-danger">Out Of Stock</p>
+                    </center>
                 </div>
             </div>
-           <br>
-            <div>
-                <h5>CHRONOSWISS
-                    Delphis Venture</h5>
-                <p> ₹ 1508576.00</p>
-            </div>
-        </div>
-
-        <div class="cardbody border p-2">
-            <div class="main-img">
-                <div class="img">
-                    <img src="{% static '/images/watch7.jpg' %}" alt="" class="w-100">
+    
+            <div class="cardbody border p-2">
+                <div class="mai" onclick="btnclik6()">
+                    <div class="main-img">
+                        <div class="img">
+                            <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/f0b79ae043f96db23a7b71063265844a/l/a/laurent-ferrier-sport-lcf040-t1-c1gc5-1.jpg?tr=w-166,h-250" alt="" class="w-100">
+                        </div>
+                    </div>
+                   <br>
+                    <div>
+                        <h5>LAURENT FERRIER
+                            Sport Auto Blue</h5>
+                        <p> ₹ 5500006.00</p>
+                    </div>
+                </div>
+             
+                <div class="outt6 hide">
+                    <center>
+                        <p class="text-danger">Out Of Stock</p>
+                    </center>
                 </div>
             </div>
-           <br>
-            <div>
-                <h5>LAURENT FERRIER
-                    Sport Auto Blue</h5>
-                <p> ₹ 5500006.00</p>
-            </div>
-        </div>
-
-        <div class="cardbody border p-2">
-            <div class="main-img">
-                <div class="img">
-                    <img src="{% static '/images/watch8.jpg' %}" alt="" class="w-100">
+    
+            <div class="cardbody border p-2">
+                <div class="mai" onclick="btnclik7()">
+                    <div class="main-img">
+                        <div class="img">
+                            <img src="https://cdn1.ethoswatches.com/media/catalog/product/cache/f0b79ae043f96db23a7b71063265844a/l/o/louis-moinet-cosmic-art-lm-87-20-20.jpg?tr=w-182,h-277" alt="" class="w-100">
+                        </div>
+                    </div>
+                   <br>
+                    <div>
+                        <h5>H. MOSER & CIE.
+                            Pioneer Centre Seconds </h5>
+                        <p> ₹ 1608576.00</p>
+                    </div>
+                </div>
+                <div class="outt7 hide">
+                    <center>
+                        <p class="text-danger">Out Of Stock</p>
+                    </center>
                 </div>
             </div>
-           <br>
+    
+            
+    
             <div>
-                <h5>H. MOSER & CIE.
-                    Pioneer Centre Seconds </h5>
-                <p> ₹ 1608576.00</p>
+    
             </div>
         </div>
+    </div><br><br><br><br>  
+</body>
 
-        
-
-        <div>
-
-        </div>
-    </div>
-</div><br><br><br><br>
 
 
 

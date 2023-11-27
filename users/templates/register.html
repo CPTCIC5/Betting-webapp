@@ -16,15 +16,28 @@
 		<div class="image-holder"></div>
 
 		<form method="post">
+			{% csrf_token %}
 			<h2 class="text-center"><strong>Create</strong> an account.</h2>
+		
+			{% if messages %}
+							  {% for msg in messages %}
+							  <p class="alert alert-success">{{msg}}</p>
+							  {% endfor %}
+							  {% else %}
+							  <p>Access to the most powerfull tool in the entire design and web industry.</p>
+							  {% endif %}
+		
+			<div class="form-group">
+				<input class="form-control py-2" type="text" name="phone_number" placeholder="Mobile Number">
+			</div><br>
 
 			<div class="form-group">
-				<input class="form-control py-2" type="text" name="phone" placeholder="Mobile Number">
-			</div><br>
+				<input class="form-control py-2" type="email" name="email" placeholder="Email Id">
+			</div><br> 
 
-            <div class="form-group">
+            <!--<div class="form-group">
 				<input class="form-control" type="text" name="otp" placeholder="OTP">
-			</div><br>
+			</div><br> -->
 
 			<div class="form-group">
 				<input class="form-control" type="password" name="password" placeholder="Password">
@@ -33,9 +46,13 @@
            
 
 			<div class="form-group">
-				<input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)">
+				<input class="form-control" type="password" name="confirm_password" placeholder="Password (repeat)">
 			</div>
 			<br>
+
+			<div class="form-group">
+				<input class="py-2" type="checkbox" name="agree" checked> I agree the terms & conditions
+			</div><br>
 <center>
 			<div class="form-group">
 				<button class="btn btn-primary btn-block w-50" type="submit">Sign Up</button>

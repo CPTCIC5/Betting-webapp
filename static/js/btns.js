@@ -419,3 +419,43 @@ function dec10000(){
         document.getElementById('zerovalue3').innerHTML=1
     }
 }
+
+function btnclik(){
+    var outt=document.querySelector('.outt')
+    outt.classList.remove('hide')    
+}
+
+function btnclik1(){
+    var outt=document.querySelector('.outt1')
+     outt.classList.remove('hide')
+}
+
+function btnclik2(){
+    var outt=document.querySelector('.outt2')
+     outt.classList.remove('hide')
+}
+
+function btnclik3(){
+    var outt=document.querySelector('.outt3')
+     outt.classList.remove('hide')
+}
+
+function btnclik4(){
+    var outt=document.querySelector('.outt4')
+     outt.classList.remove('hide')
+}
+
+function btnclik5(){
+    var outt=document.querySelector('.outt5')
+     outt.classList.remove('hide')
+}
+
+function btnclik6(){
+    var outt=document.querySelector('.outt6')
+     outt.classList.remove('hide')
+}
+
+function btnclik7(){
+    var outt=document.querySelector('.outt7')
+     outt.classList.remove('hide')
+}

@@ -11,6 +11,7 @@
 </head>
 
 <body class="main-bg w-100">
+	
   <!-- Login Form -->
   <div class="register-photo">
 	<div class="form-container">
@@ -19,6 +20,14 @@
 		<form method="post">
 			{% csrf_token %}
 			<h2 class="text-center"><strong>Login</strong> an account.</h2>
+	
+			{% if messages %}
+							  {% for msg in messages %}
+							  <p class="alert alert-success">{{msg}}</p>
+							  {% endfor %}
+							  {% else %}
+							  <p>Access to the most powerfull tool in the entire design and web industry.</p>
+							  {% endif %}
 
 			<div class="form-group">
 				<input class="form-control py-2" type="text" name="phone_number" placeholder="Mobile Number">
@@ -27,7 +36,7 @@
 			<div class="form-group">
 				<input class="form-control" type="password" name="password" placeholder="Password">
 			</div><br>
-			<a href="{% url 'users:reset-password' %}" class="already">Forgot Password?</a>
+			<a href="{% url 'password_reset' %}" class="already">Forgot Password?</a>
         
 			<br>
 <center>

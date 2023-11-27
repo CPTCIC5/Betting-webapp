@@ -25,6 +25,7 @@
 
 
 {% block body %}
+
   <div class="register-photo">
 
     <div class="form-container">
@@ -109,21 +110,20 @@
        
       </div>
 
-      <form class="profilecon" method="post">
         <!-- profile -->
+        <div class="profilecon" >
+
         <div class="container gg">
           <div class="row">
             <div class="">
-
               <div class="profile">
-
                 <div class="name">
                   <center>
                     <div class="avatar">
                       <img src="{% static '/images/user.jpg' %}" alt="Circle Image" class="img-raised rounded-circle img-fluid"
                         style="max-width: 80px;">
                     </div>
-                    <h2 class="title">User: +919000000000</h2>
+                    <h2 class="title">User: {{user.phone_number}}</h2>
                 </div>
               </div>
             </div>
@@ -131,7 +131,7 @@
 
           <div style="display: flex;width: 100%; flex-direction: row; justify-content: space-evenly;align-items: center;">
 
-            <button class="mb-3 btn btn-outline-primary">Coins 38576</button>
+            <button class="mb-3 btn btn-outline-primary">Coins 0</button>
 
 
             <button class="mb-3 btn btn-outline-primary">Award ₹0</button>
@@ -141,8 +141,8 @@
           </div>
 
           <div class="d-flex flex-row justify-content-center align-items-center mt-2">
-            <a href="{% url 'users:logout' %}" class="m-2">
-              <button class="btn btn-primary w-100" type="submit">Recharge</button>
+            <a href="" class="m-2">
+              <button class="btn btn-primary w-100" type="submit">Buy Coin</button>
             </a>
             <a href="{% url 'users:logout' %}">
               <button class="btn btn-danger w-100" type="submit">Logout</button>
@@ -150,7 +150,7 @@
           </div>
           
         </div>
-      </form>
+      </div>
       </center>
       <!-- Orders -->
       <form class="hide ordercon" method="post">
@@ -291,27 +291,27 @@
       </form>
 
       <!-- cs -->
-      <form class="cscon hide" method="post" style="padding-left: 20px;padding-right: 20px;">
+      <form class="cscon hide" method="post" style="padding-left: 20px;padding-right: 20px;" method="POST">
+        {% csrf_token %}
         <h2 class="text-center"><strong>Feedback</strong><br> <span class="already">(Have a Complaint? Let us
             know)</span></h2>
-
         <div class="form-group">
-          <input class="form-control py-2" type="text" name="phone" placeholder="Title">
+          <input class="form-control py-2" type="text" name="title" placeholder="Title">
         </div><br>
 
         <div class="form-group">
-          <select class="form-select" name="" id="">
-            <option class="form-control" value="" disabled>Select</option>
-            <option class="form-control" value="">Suggestion</option>
-            <option class="form-control" value="">Consult</option>
-            <option class="form-control" value="">Withdraw Problem</option>
+          <select class="form-select" name="suggestion" id="">
+            <option class="form-control" value="Suggestion" disabled>Select</option>
+            <option class="form-control" value="Suggestion">Suggestion</option>
+            <option class="form-control" value="Consult">Consult</option>
+            <option class="form-control" value="Withdraw Problems">Withdraw Problem</option>
           </select>
         </div><br>
         <div class="form-group">
-          <input class="form-control" type="text" name="whatsapp" placeholder="Whatsapp">
+          <input class="form-control" type="text" name="whatsapp_num" placeholder="Whatsapp">
         </div><br>
         <div class="mb-3">
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description"
+          <textarea class="form-control"  name="desc" id="exampleFormControlTextarea1" rows="3" placeholder="Description"
             style="resize: none;"></textarea>
         </div>
         <center>

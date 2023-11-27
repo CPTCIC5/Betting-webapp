@@ -25,13 +25,13 @@ function countDownTimer(){
             elems[i].style.color = "white"; // Change the text color to white
         }
 
-        
+   
         
     }
   if(count_timer<=0){
    
     localStorage.clear("count_timer");
-         location.href=''
+    document.getElementById('confbtn').click()
   }
     else {
         count_timer = count_timer -1 ;
@@ -83,3 +83,13 @@ setTimeout("countDownTimer()",1000);
 //     }
 // }
 
+function myfunc(){
+    var loader=document.querySelector('.loader')
+    var cof=document.querySelector('.container-fluid')
+    var car=document.querySelector('.carousel')
+    cof.classList.remove('hide')
+    car.classList.remove('hide')
+    loader.classList.add('hide')
+  }
+
+  

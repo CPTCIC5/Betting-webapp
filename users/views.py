@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth import authenticate,login as auth_login
-from .models import User
+from .models import User,Feedback
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -14,26 +14,29 @@ def risk_agreement(request):
 def precord(request):
     return render(request,'parityrecord.html')
 
-def orders(request):
-    return render(request,'orders.html')
 
 def policy(request):
     return render(request,'policy.html')
 
 def register(request):
     if request.method == 'POST':
-        phone_number = request.POST.get('phone_number')
-        password = request.POST.get('password')
-        confirm_password = request.POST.get('confirm_password')
+        email=request.POST.get('email')
+        phone_number = request.POST['phone_number']
+        password = request.POST['password']
+        confirm_password = request.POST['confirm_password']
         if password == confirm_password:
             if User.objects.filter(phone_number=phone_number).exists():
                 messages.info(request,'Phone Number Already Registered')
+                return render(request,'register.html')
+            elif User.objects.filter(email=email).exists():
+                messages.info(request,'Email Taken')
                 return render(request,'register.html')
             elif len(password) <8:
                 messages.info(request,'ATLEAST 8 CHARACTER PASSWORD NEEDED')
                 return render(request,'register.html')
             else:
-                entry=User.objects.create_user(phone_number=phone_number,password=password)
+                entry=User(email=email,phone_number=phone_number)
+                entry.set_password(password)
                 entry.save()
                 messages.success(request,'done')
                 return HttpResponseRedirect(reverse('users:login'))
@@ -43,8 +46,17 @@ def register(request):
     return render(request,'register.html')
 
 @login_required
-def profile(request,pk):
-    user= get_object_or_404(User,pk=pk)
+def profile(request,id):
+    user= get_object_or_404(User,pk=id)
+    if request.method == 'POST' and 'title' in request.POST:
+        title= request.POST.get('title')
+        suggestion = request.POST.get('suggestion')
+        whatsapp_num = request.POST.get('whatsapp_num')
+        desc = request.POST.get('desc')
+        entry = Feedback(title=title, suggestion=suggestion, whatsapp_num=whatsapp_num, desc=desc)
+        entry.save()
+        messages.success(request,'Response Sent!, Team will get back to you within 24 hours.')
+        return HttpResponseRedirect(reverse('home:index'))
     return render(request,'profile.html',{'user':user})
 
 def login(request):
@@ -54,7 +66,7 @@ def login(request):
         user = authenticate(phone_number=phone_number, password=password)
         if user is not None:
             auth_login(request, user)
-            messages.success(request,'Message')
+            messages.success(request,'Redirected')
             return HttpResponseRedirect(reverse('main:parity'))
         else:
             messages.error(request,'Wrong Username or Password! ')
@@ -62,5 +74,6 @@ def login(request):
     return render(request,'login.html')
 
 
-def reset():
-    pass
+@login_required
+def precord(request):
+    return render(request,'parityrecord.html')
