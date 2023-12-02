@@ -27,7 +27,7 @@ with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
 # SECURITY WARNING: don't run w ith debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','441a-2405-201-3023-6a11-c036-1d95-560c-21ed.ngrok-free.app']
 
 
 # Application definition
@@ -148,6 +148,7 @@ STATICFILES_DIRS= [
     os.path.join(BASE_DIR,'static')
 ]
 """
+
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
