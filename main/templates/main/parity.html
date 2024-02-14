@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
     {% block title %} Game {% endblock title %}
     {% load static %}
@@ -27,29 +28,31 @@
             <p class="text-secondary px-3" style="border-radius: 5px;cursor: pointer;">Bcone</p>
         </div><br>
       </center>
-      <!-- <div class="balance px-3 py-2 text-center">
-        <p>&nbsp;User: +91-900000000</p>
-          <h5 class="mb-3" style="font-size: 18px;">Available Coins: 0.00</h5>
-          <button class="btn btn-success" style="font-size: 14px;">Recharge</button>&nbsp;
-          <button class="btn btn-info text-light" style="font-size: 14px;">Trends</button>
-      </div> -->
         <div class="parity p-3" style="display: flex;flex-direction: row;align-items: center;justify-content: space-evenly;box-shadow: 1px 2px 10px rgb(172, 170, 170);">
           <div class="period">
             <p><i class="fa-solid fa-calendar-days"></i> &nbsp; <strong>Period:</strong> </p>
-            <span class="parspans">20231102206</span>
+            <span class="parspans">{{recent_objects.id}}</span>
           </div>
           <div class="balance px-3 py-2 text-center">
             <p>&nbsp;User: +91-{{user.phone_number}}</p>
-              <h5 class="mb-3">Available Coins:0.00</h5>
-              <a href=""  style="text-decoration: none;"> <button class="btn btn-success">Recharge</button> </a>
+              <h5 class="mb-3">Available Coins:{{user.profile.coins}}</h5>
+              <a href="{% static 'images/payment.jpeg' %}"  style="text-decoration: none;"> <button class="btn btn-success">Recharge</button> </a>
              <a href="{% url 'main:trend' %}" style="text-decoration: none;"> <button class="btn btn-info text-light">Trends</button></a>
           </div>
-            <div id="timer">
+            <!--<div id="timer" class="{{recent_objects.created_at}}"> -->
+            <div id="timer" data-start-time='{{recent_objects.time_difference}}'>
+
+
             </div>
         </div><br>
         <div class="btns mx-5">
-<form action="" method="post">
+<form  method="post">
   {% csrf_token %} 
+
+
+
+
+
 <!-- green -->
 <div class="modal fade" id="green" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -84,16 +87,15 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="greenmoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="greenmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
-            
           </div>
 
           <div class="tab-pane fade" id="g100" role="tabpanel" aria-labelledby="profile-tab">
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="greenvalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="greenvalue1"> <input type="tel" name="Green" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 wtext-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="greenmoney1">100</span></p>
@@ -132,6 +134,9 @@
   </div>
 </div>
 
+
+
+
 <!-- red  -->
 <div class="modal fade" id="red" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -166,7 +171,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="redmoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="redmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -248,7 +253,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="violetmoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="violetmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -330,7 +335,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="onemoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="onemoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -412,7 +417,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="twomoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="twomoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -494,7 +499,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="threemoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="threemoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -576,7 +581,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="fourmoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="fourmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -658,7 +663,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="fivemoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="fivemoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -740,7 +745,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="sixmoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="sixmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -822,7 +827,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="sevenmoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="sevenmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -903,7 +908,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="eightmoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="eightmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -985,7 +990,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="ninemoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="ninemoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -1068,7 +1073,7 @@
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="zeromoney"><input type="tel" name="contractmoney" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="zeromoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>

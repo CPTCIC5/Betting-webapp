@@ -5,4 +5,4 @@ def index(request):
     return render(request,'landing/index.html')
 
 def search(request):
-    return render(request,'landing/search.html')
+    return render(request,'search.html')

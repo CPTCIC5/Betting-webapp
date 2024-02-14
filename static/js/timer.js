@@ -1,47 +1,43 @@
-if(localStorage.getItem("count_timer")){
-    var count_timer = localStorage.getItem("count_timer");
-} else {
-    var count_timer = 180;
-}
+document.addEventListener("DOMContentLoaded", function() {
+    var timerElement = document.getElementById("timer");
+    var count_timer = 180 -parseInt(timerElement.dataset.startTime); // Fetch the start time from the data attribute
+    alert(count_timer)
 
-var minutes = parseInt(count_timer/60);
-var seconds = parseInt(count_timer%60);
-function countDownTimer(){
-    if(seconds < 10){
-        seconds= "0"+ seconds ;
-    }if(minutes < 10){
-        minutes= "0"+ minutes ;
-    }
-    
-    document.getElementById("timer").innerHTML = `<p><i class="fa-solid fa-clock"></i>&nbsp;Countdown:</p>
-    <center> <span class="minutes">${minutes}</span> :
-     <span class="seconds">${seconds}</span><center>`;
-    if(count_timer <= 30){
-        var elems = document.getElementsByClassName("pbtn");
-        for (var i = 0; i < elems.length; i++) {
-            console.log(elems[i])
-            elems[i].disabled = true;
-            elems[i].style.backgroundColor = "gray"; // Change the background color to gray
-            elems[i].style.color = "white"; // Change the text color to white
+    function countDownTimer() {
+        var minutes = Math.floor(count_timer / 60); // Calculate minutes
+        var seconds = count_timer % 60; // Calculate remaining seconds
+        
+        if (seconds < 10) {
+            seconds = "0" + seconds; // Add leading zero if seconds is less than 10
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes; // Add leading zero if minutes is less than 10
         }
 
-   
+        timerElement.innerHTML = `<p><i class="fa-solid fa-clock"></i>&nbsp;Countdown:</p>
+                                   <center> <span class="minutes">${minutes}</span> :
+                                   <span class="seconds">${seconds}</span><center>`;
         
+        if (count_timer <= 30) {
+            var elems = document.getElementsByClassName("pbtn");
+            for (var i = 0; i < elems.length; i++) {
+                elems[i].disabled = true;
+                elems[i].style.backgroundColor = "gray"; // Change the background color to gray
+                elems[i].style.color = "white"; // Change the text color to white
+            }
+        }
+        
+        if (count_timer <= 0) {
+            localStorage.removeItem("count_timer");
+            document.getElementById('confbtn').click();
+        } else {
+            count_timer = count_timer - 1;
+            setTimeout(countDownTimer, 1000);
+        }
     }
-  if(count_timer<=0){
-   
-    localStorage.clear("count_timer");
-    document.getElementById('confbtn').click()
-  }
-    else {
-        count_timer = count_timer -1 ;
-        minutes = parseInt(count_timer/60);
-        seconds = parseInt(count_timer%60);
-        localStorage.setItem("count_timer",count_timer);
-        setTimeout("countDownTimer()",1000);
-    }
-}
-setTimeout("countDownTimer()",1000);
+
+    setTimeout(countDownTimer, 1000);
+});
 
 // var min=2
 // var sec=60

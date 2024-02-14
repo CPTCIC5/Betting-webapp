@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth import authenticate,login as auth_login
-from .models import User,Feedback
+from .models import User,Feedback,Profile
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -24,6 +24,7 @@ def register(request):
         phone_number = request.POST['phone_number']
         password = request.POST['password']
         confirm_password = request.POST['confirm_password']
+        referal_code = request.POST.get('referal_code','')
         if password == confirm_password:
             if User.objects.filter(phone_number=phone_number).exists():
                 messages.info(request,'Phone Number Already Registered')
@@ -38,6 +39,14 @@ def register(request):
                 entry=User(email=email,phone_number=phone_number)
                 entry.set_password(password)
                 entry.save()
+                if referal_code != '':
+                    user=Profile.objects.filter(referal_code__exact=referal_code).first()
+                    if not user:
+                        messages.warning(request,"Invalid Referral Code")
+                    else:
+                        user.total_referal+=1
+                        user.coins+=10
+                        user.save()
                 messages.success(request,'done')
                 return HttpResponseRedirect(reverse('users:login'))
         else:
@@ -47,7 +56,7 @@ def register(request):
 
 @login_required
 def profile(request,id):
-    user= get_object_or_404(User,pk=id)
+    user= get_object_or_404(User,id=id)
     if request.method == 'POST' and 'title' in request.POST:
         title= request.POST.get('title')
         suggestion = request.POST.get('suggestion')

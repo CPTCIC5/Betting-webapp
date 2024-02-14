@@ -459,3 +459,39 @@ function btnclik7(){
     var outt=document.querySelector('.outt7')
      outt.classList.remove('hide')
 }
+//1
+function btnclik8(){
+    var outt=document.querySelector('.outt7')
+     outt.classList.remove('hide')
+}
+
+function btnclik9(){
+    var outt=document.querySelector('.outt9')
+     outt.classList.remove('hide')
+}
+
+function btnclik10(){
+    var outt=document.querySelector('.outt10')
+     outt.classList.remove('hide')
+}
+
+function btnclik11(){
+    var outt=document.querySelector('.outt11')
+     outt.classList.remove('hide')
+}
+function btnclik12(){
+    var outt=document.querySelector('.outt12')
+     outt.classList.remove('hide')
+}
+function btnclik13(){
+    var outt=document.querySelector('.outt13')
+     outt.classList.remove('hide')
+}
+function btnclik14(){
+    var outt=document.querySelector('.outt14')
+     outt.classList.remove('hide')
+}
+function btnclik15(){
+    var outt=document.querySelector('.outt15')
+     outt.classList.remove('hide')
+}

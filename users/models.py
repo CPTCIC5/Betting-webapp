@@ -1,20 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from .managers import UserManager
-from django.dispatch import receiver 
+from django.dispatch import receiver
 from django.db.models.signals import post_save
-
+from random import randint
 
 # Create your models here.
 class User(AbstractUser):
     username = None
-    phone_number=models.CharField(max_length=15,unique=True)
-    is_phone_verified= models.BooleanField(default=False)
+    phone_number = models.CharField(max_length=15, unique=True)
+    is_phone_verified = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'phone_number'
     objects = UserManager()
-    
-    
+
+
     def save(self, *args, **kwargs):
         if not self.id:
             # If the user is being created (not updating) and a password is provided, set the password
@@ -22,17 +22,27 @@ class User(AbstractUser):
                 self.set_password(self.password)
         super().save(*args, **kwargs)
 
-
     def __str__(self):
         return f"Number {self.phone_number}"
-    
-    
+
+
 class Profile(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    referal_code = models.CharField(max_length=10,default='',blank=True)
+    total_referal= models.PositiveIntegerField(default=0)
+    coins = models.DecimalField(max_digits=7,default=0,decimal_places=2)
+
+    def create_random(self):
+        return ''.join([str(randint(0, 9)) for _ in range(6)])  # Generates a 6-digit random number
+
+    def save(self, *args, **kwargs):
+        if not self.referal_code:
+            self.referal_code = self.create_random()
+        super().save(*args, **kwargs)
 
     def __str__(self):
-        return str(self.user.username)
-    
+        return str(self.user.phone_number)
+
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
@@ -42,9 +52,6 @@ class Profile(models.Model):
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
-    
-    def save(self,*args, **kwargs):
-        super(Profile, self).save(*args, **kwargs)
 
 
 TYPES = (

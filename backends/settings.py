@@ -25,14 +25,15 @@ with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run w ith debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','13.232.204.252']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    #"daphne",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,10 +53,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    #"whitenoise.middleware.WhiteNoiseMiddleware",
 
 ]
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 ROOT_URLCONF = 'backends.urls'
 
@@ -77,6 +78,7 @@ TEMPLATES = [
 
 
 WSGI_APPLICATION = 'backends.wsgi.application'
+#ASGI_APPLICATION = "backends.asgi.application"
 AUTH_USER_MODEL = 'users.User'
 LOGOUT_REDIRECT_URL = 'users:login'
 
@@ -95,17 +97,18 @@ DATABASES = {
 }
 """
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': "silverxcoin",
         'USER': "postgres",
-        'PASSWORD': "Iamreal123",   
+        'PASSWORD': "Iamreal123",
         'HOST': "localhost",
         'PORT': "5432",  # 5432 by default
     }
 }
+
+#database.cxr5b3kgiixz.ap-south-1.rds.amazonaws.com
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -143,14 +146,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-"""
+
 STATICFILES_DIRS= [
     os.path.join(BASE_DIR,'static')
 ]
-"""
 
 
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
+#STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
