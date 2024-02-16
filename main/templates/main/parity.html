@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
     {% block title %} Game {% endblock title %}
     {% load static %}
@@ -11,8 +10,6 @@
     <p class="h4" aria-hidden="true">Total Price is 450000 ✨</p>&nbsp;
     <p class="h4" aria-hidden="true">Number Result is 4✨</p>&nbsp;
   </div>
-
-  
 </div>
 
     {% endblock file %}
@@ -40,20 +37,14 @@
              <a href="{% url 'main:trend' %}" style="text-decoration: none;"> <button class="btn btn-info text-light">Trends</button></a>
           </div>
             <!--<div id="timer" class="{{recent_objects.created_at}}"> -->
-            <div id="timer" data-start-time='{{recent_objects.time_difference}}'>
-
-
-            </div>
+              <div id="timer" data-start-time='{{ recent_objects.time_difference }}'></div>
         </div><br>
         <div class="btns mx-5">
+
+
 <form  method="post">
-  {% csrf_token %} 
-
-
-
-
-
-<!-- green -->
+{% csrf_token %} 
+<!-- green --> <!-- color prediction, bet_value -->
 <div class="modal fade" id="green" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -77,17 +68,19 @@
             <button class="nav-link" id="gcontact1-tab" data-bs-toggle="tab" data-bs-target="#g10000" type="button" role="tab" aria-controls="contact" aria-selected="false">10000</button>
           </li>
         </ul>
+
+
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="g10" role="tabpanel" aria-labelledby="home-tab">
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="greenvalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="greenvalue"> <input type="text" name="color_prediction" value="Green" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="greenmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="greenmoney"><input type="number" name="bet_value" value="bet_value" disabled  id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
           </div>
 
@@ -95,7 +88,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="greenvalue1"> <input type="tel" name="Green" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="greenvalue1"> <input type="number" name="bet_value"  value="bet_value" disabled  id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 wtext-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="greenmoney1">100</span></p>
@@ -105,7 +98,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="greenvalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="greenvalue2"> <input type="number" name="bet_value"  value="bet_value" disabled  id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="greenmoney2">1000</span></p>
@@ -116,7 +109,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="greenvalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="greenvalue3"> <input type="number" name="bet_value"  value="bet_value" disabled  id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="greenmoney3">10000</span></p>
@@ -133,11 +126,11 @@
     </div>
   </div>
 </div>
+</form>
 
-
-
-
-<!-- red  -->
+<form  method="post">
+  {% csrf_token %} 
+<!-- red  --> <!-- color prediction, bet_value -->
 <div class="modal fade" id="red" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -167,11 +160,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="redvalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="redvalue"> <input type="text" name="color_prediction"  value="Red" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="redmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="redmoney"><input type="number" name="bet_value" value="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -180,7 +173,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="redvalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="redvalue1"> <input type="number" name="bet_value" value="bet_value" disabled id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="redmoney1">100</span></p>
@@ -190,7 +183,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="redvalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="redvalue2"> <input type="tel" name="bet_value" value="bet_value" disabled  id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="redmoney2">1000</span></p>
@@ -201,7 +194,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="redvalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="redvalue3"> <input type="number" name="bet_value" value="bet_value"  disabled id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="redmoney3">10000</span></p>
@@ -218,8 +211,11 @@
     </div>
   </div>
 </div>
+</form>
 
-<!-- violet -->
+<form  method="post">
+  {% csrf_token %} 
+<!-- violet --> <!-- color prediction, bet_value -->
 <div class="modal fade" id="violet" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -249,11 +245,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="violetvalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="violetvalue"> <input type="text" name="color_prediction"  value="Voilet" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="violetmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="violetmoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -262,7 +258,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="violetvalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="violetvalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="violetmoney1">100</span></p>
@@ -272,7 +268,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="violetvalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="violetvalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="violetmoney2">1000</span></p>
@@ -283,7 +279,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="violetvalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="violetvalue3"> <input type="text" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="violetmoney3">10000</span></p>
@@ -300,8 +296,13 @@
     </div>
   </div>
 </div>
+</form>
 
-<!-- 1 -->
+
+
+<form  method="post">
+  {% csrf_token %} 
+<!-- 1 --> <!-- number_prediction, bet_value -->
 <div class="modal fade" id="one" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -331,11 +332,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="onevalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="onevalue"> <input type="text" name="number_prediction"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="onemoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="onemoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -344,7 +345,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="onevalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="onevalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="onemoney1">100</span></p>
@@ -354,7 +355,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="onevalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="onevalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="onemoney2">1000</span></p>
@@ -365,7 +366,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="onevalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="onevalue3"> <input type="number" name="bet_value"  disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="onemoney3">10000</span></p>
@@ -382,7 +383,10 @@
     </div>
   </div>
 </div>
+</form>
 
+<form  method="post">
+  {% csrf_token %} 
 <!-- 2  -->
 <div class="modal fade" id="two" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -413,11 +417,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="twovalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="twovalue"> <input type="text" name="number_prediction"  value="2" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="twomoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="twomoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -426,7 +430,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="twovalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="twovalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="twomoney1">100</span></p>
@@ -436,7 +440,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="twovalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="twovalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="twomoney2">1000</span></p>
@@ -447,7 +451,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="twovalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="twovalue3"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="twomoney3">10000</span></p>
@@ -464,7 +468,10 @@
     </div>
   </div>
 </div>
+</form>
 
+<form  method="post">
+  {% csrf_token %} 
 <!-- 3 -->
 <div class="modal fade" id="three" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -495,11 +502,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="threevalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="threevalue"> <input type="text" name="number_prediction"  value="3" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="threemoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="threemoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -508,7 +515,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="threevalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="threevalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="threemoney1">100</span></p>
@@ -518,7 +525,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="threevalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="threevalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="threemoney2">1000</span></p>
@@ -529,7 +536,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="threevalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="threevalue3"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="threemoney3">10000</span></p>
@@ -546,7 +553,10 @@
     </div>
   </div>
 </div>
+</form>
 
+<form  method="post">
+  {% csrf_token %} 
 <!-- 4  -->
 <div class="modal fade" id="four" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -577,11 +587,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="fourvalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="fourvalue"> <input type="text" name="number_prediction"  value="4" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="fourmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="fourmoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -590,7 +600,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="fourvalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="fourvalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="fourmoney1">100</span></p>
@@ -600,7 +610,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="fourvalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="fourvalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="fourmoney2">1000</span></p>
@@ -611,7 +621,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="fourvalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="fourvalue3"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="fourmoney3">10000</span></p>
@@ -628,7 +638,10 @@
     </div>
   </div>
 </div>
+</form>
 
+<form  method="post">
+  {% csrf_token %} 
 <!-- 5  -->
 <div class="modal fade" id="five" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -659,11 +672,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="fivevalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="fivevalue"> <input type="text" name="number_prediction"  value="5" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="fivemoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="fivemoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -672,7 +685,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="fivevalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="fivevalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="fivemoney1">100</span></p>
@@ -682,7 +695,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="fivevalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="fivevalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="fivemoney2">1000</span></p>
@@ -693,7 +706,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="fivevalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="fivevalue3"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="fivemoney3">10000</span></p>
@@ -710,7 +723,10 @@
     </div>
   </div>
 </div>
+</form>
 
+<form  method="post">
+  {% csrf_token %} 
 <!-- 6  -->
 <div class="modal fade" id="six" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -741,11 +757,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="sixvalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="sixvalue"> <input type="text" name="number_prediction"  value="6" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="sixmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="sixmoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -754,7 +770,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="sixvalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="sixvalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 wtext-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="sixmoney1">100</span></p>
@@ -764,7 +780,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="sixvalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="sixvalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="sixmoney2">1000</span></p>
@@ -775,7 +791,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="sixvalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="sixvalue3"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="sixmoney3">10000</span></p>
@@ -792,7 +808,10 @@
     </div>
   </div>
 </div>
+</form>
 
+<form  method="post">
+  {% csrf_token %} 
 <!-- 7 -->
 <div class="modal fade" id="seven" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -823,11 +842,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="sevenvalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="sevenvalue"> <input type="text" name="number_prediction"  value="7" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="sevenmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="sevenmoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -836,7 +855,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="sevenvalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="sevenvalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 wtext-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="sevenmoney1">100</span></p>
@@ -846,7 +865,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="sevenvalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="sevenvalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="sevenmoney2">1000</span></p>
@@ -857,7 +876,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="sevenvalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="sevenvalue3"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="sevenmoney3">10000</span></p>
@@ -874,6 +893,10 @@
     </div>
   </div>
 </div>
+</form>
+
+<form  method="post">
+  {% csrf_token %} 
 <!-- 8 -->
 <div class="modal fade" id="eight" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -904,11 +927,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="eightvalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="eightvalue"> <input type="text" name="number_prediction"  value="8" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="eightmoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="eightmoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -917,7 +940,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="eightvalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="eightvalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 wtext-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="eightmoney1">100</span></p>
@@ -927,7 +950,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="eightvalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="eightvalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="eightmoney2">1000</span></p>
@@ -938,7 +961,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="eightvalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="eightvalue3"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="eightmoney3">10000</span></p>
@@ -955,7 +978,11 @@
     </div>
   </div>
 </div>
+</form>
 
+
+<form  method="post">
+  {% csrf_token %} 
 <!-- 9 -->
 <div class="modal fade" id="nine" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -986,11 +1013,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="ninevalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="ninevalue"> <input type="text" name="number_prediction"  value="9" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="ninemoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="ninemoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -999,7 +1026,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="ninevalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="ninevalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 wtext-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="ninemoney1">100</span></p>
@@ -1009,7 +1036,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="ninevalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="ninevalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="ninemoney2">1000</span></p>
@@ -1020,7 +1047,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="ninevalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="ninevalue3"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="ninemoney3">10000</span></p>
@@ -1037,8 +1064,10 @@
     </div>
   </div>
 </div>
+</form>
 
-
+<form  method="post">
+  {% csrf_token %} 
 <!-- 0 -->
 <div class="modal fade" id="zero" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -1069,11 +1098,11 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="zerovalue"> <input type="tel" name="valuee"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="zerovalue"> <input type="text" name="number_prediction"  value="0" id="" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
-             <p>Total Contract : Rs.<span id="zeromoney"><input type="tel" name="bet_value" disabled value="10" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
+             <p>Total Contract : Rs.<span id="zeromoney"><input type="number" name="bet_value" disabled value="bet_value" id="" style="width: 10%; border: none; text-align: center; outline: none;"></span></p>
             </p>
             
           </div>
@@ -1082,7 +1111,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc100()"></i> 
-                <span class="value" id="zerovalue1"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="zerovalue1"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 wtext-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec100()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="zeromoney1">100</span></p>
@@ -1092,7 +1121,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc1000()"></i> 
-                <span class="value" id="zerovalue2"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="zerovalue2"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec1000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="zeromoney2">1000</span></p>
@@ -1103,7 +1132,7 @@
             <p class="mt-2">Number:
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10000()"></i> 
-                <span class="value" id="zerovalue3"> <input type="tel" name="" disabled value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="zerovalue3"> <input type="number" name="bet_value" disabled value="bet_value" id="" style="border: none; text-align: center; outline: none;"> </span>
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10000()"></i>
               </div><br>
              <p>Total Contract : Rs.<span id="zeromoney3">10000</span></p>
@@ -1122,8 +1151,6 @@
 </div>
 <input type="submit" value="" id="confbtn">
 </form>
-
-
 
           <div class="colorbtn colobtn mb-3">
             <button data-bs-toggle="modal" href="#green" role="button" class="btn pbtn btn-success mr-3 py-3" >Join Green</button>

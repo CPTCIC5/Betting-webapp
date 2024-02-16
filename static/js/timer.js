@@ -1,7 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     var timerElement = document.getElementById("timer");
-    var count_timer = 180 -parseInt(timerElement.dataset.startTime); // Fetch the start time from the data attribute
-    alert(count_timer)
+    var count_timer = parseInt(timerElement.dataset.startTime) ; // Fetch the start time from the data attribute
+    if (count_timer > 180){
+        count_timer=0;
+    }
+    else {
+        count_timer = 180 - count_timer
+    }
+
+    
 
     function countDownTimer() {
         var minutes = Math.floor(count_timer / 60); // Calculate minutes
