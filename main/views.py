@@ -19,6 +19,7 @@ def parity(request):
     if request.method == 'POST':
         game= recent_objects
         user = request.user.profile
+        print('total coins of user',user.coins)
         color_prediction = request.POST.get('color_prediction')
         number_prediction = request.POST.get('number_prediction')
         bet_value = request.POST.get('bet_value','10')
@@ -31,14 +32,18 @@ def parity(request):
                                     color_prediction=color_prediction,
                                     number_prediction=number_prediction,
                                     bet_value=bet_value)
+            
             x1.save()
+            x1.user.coins = x1.user.coins - Decimal(x1.bet_value)
+            print('new coins',x1.user.coins)
+            x1.user.save()
             return HttpResponseRedirect('main:parity')
             #messages.info(request,f"The correct color is {x1.final_color} and {x1.final_number}")
         elif Decimal(bet_value) > user.coins:
             messages.error(request,'Balance  insufficient! You only have {} coins'.format(user.coins))
             return render(request,"parity/index.html")
         else:
-            messages.error(request,'Didnt selected anything')
+            messages.info(request,'Didnt selected anything')
             return render(request,'xyz.html')
         
     return render(request,'main/parity.html',{'recent_objects':recent_objects})
