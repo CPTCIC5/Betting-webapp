@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import Game,Player
+from django.urls import reverse
 from django.contrib import messages
 from  decimal import Decimal
 # Create your views here.
@@ -11,8 +12,11 @@ from  decimal import Decimal
 @login_required
 def parity(request):
     recent_objects = Game.objects.latest('id')
-    print(recent_objects.time_difference)
+
+    
     previous_object = Game.objects.filter(id__lt=recent_objects.id).order_by('-id').last()
+    recent_results = Game.objects.filter(name=recent_objects.name).order_by('-id')[1:6]
+    #print(recent_results)
     #recent_objects = Game.objects.order_by('-id')[:3]
 
 
@@ -37,16 +41,15 @@ def parity(request):
             x1.user.coins = x1.user.coins - Decimal(x1.bet_value)
             print('new coins',x1.user.coins)
             x1.user.save()
-            return HttpResponseRedirect('main:parity')
+            return HttpResponseRedirect(reverse('main:parity'))
             #messages.info(request,f"The correct color is {x1.final_color} and {x1.final_number}")
         elif Decimal(bet_value) > user.coins:
             messages.error(request,'Balance  insufficient! You only have {} coins'.format(user.coins))
-            return render(request,"parity/index.html")
+            return render(request,"main/parity.html",{'recent_objects':recent_objects,'previous_object':previous_object,'recent_results':recent_results})
         else:
             messages.info(request,'Didnt selected anything')
-            return render(request,'xyz.html')
-        
-    return render(request,'main/parity.html',{'recent_objects':recent_objects})
+            return render(request,'main/parity.html',{'recent_objects':recent_objects,'previous_object':previous_object,'recent_results':recent_results})
+    return render(request,'main/parity.html',{'recent_objects':recent_objects,'previous_object':previous_object,'recent_results':recent_results})
 
 
 

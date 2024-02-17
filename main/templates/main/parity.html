@@ -3,7 +3,6 @@
     {% load static %}
     {% block file %}<link rel="stylesheet" href="{% static '/css/profile.css' %}">  
     <!-- <marquee behavior="" direction="" style="background-image: linear-gradient(to right,blue,rgb(119, 0, 255));  padding: 3px;color: white;">Winner is <span style="color: red;text-shadow: 1px 1px black;">Red</span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -->
-   
 <div class="marquee marquee_hoverpause marquee--borders" style="--duration: 10s;   transform: skewY(-0deg);">
   <div class="marquee__group">
     <p class="h4">Colour Result is Red 🔴✨ </p>&nbsp;
@@ -12,10 +11,11 @@
   </div>
 </div>
 
+
     {% endblock file %}
 
   {% block body %}
-  
+
     <div class="container-fluid " style="padding: 0;">
       
       <center>
@@ -42,7 +42,7 @@
         <div class="btns mx-5">
 
 
-<form  method="post">
+<form  method="post" id="formm">
 {% csrf_token %} 
 <!-- green --> <!-- color prediction, bet_value -->
 <div class="modal fade" id="green" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -76,7 +76,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="greenvalue"> <input type="text" name="color_prediction" value="Green" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="greenvalue"> <input type="text" name="color_prediction" value="Green" class="color" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -121,7 +121,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" >Confirm</button>
+        <button type="button" class="btn btn-success">Confirm</button>
       </div>
     </div>
   </div>
@@ -156,7 +156,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="redvalue"> <input type="text" name="color_prediction"  value="Red" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="redvalue"> <input type="text" name="color_prediction"  value="Red" class="color" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -238,7 +238,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="violetvalue"> <input type="text" name="color_prediction"  value="Voilet" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="violetvalue"> <input type="text" name="color_prediction"  value="Voilet" class="color" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -292,7 +292,7 @@
 
 
 
-=<!-- 1 --> <!-- number_prediction, bet_value -->
+<!-- 1 --> <!-- number_prediction, bet_value -->
 <div class="modal fade" id="one" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -1116,6 +1116,7 @@
 <input type="submit" value="" id="confbtn">
 </form>
 
+
           <div class="colorbtn colobtn mb-3">
             <button data-bs-toggle="modal" href="#green" role="button" class="btn pbtn btn-success mr-3 py-3" >Join Green</button>
             <button  data-bs-toggle="modal" data-bs-target="#violet" class="btn pbtn text-light py-3"style=" background-color: rgb(192, 71, 192);">Join Violet</button>
@@ -1147,55 +1148,27 @@
         <thead class="table-dark">
           <tr>
             <th scope="col">Period</th>
-            <th scope="col">Price</th>
-            <th scope="col">Number</th>
-            <th scope="col">Result</th>
+            <th scope="col">Final- Color</th>
+            <th scope="col">Final- Number</th>
           </tr>
         </thead>
         <tbody>
+          {% for obj in recent_results %}
           <tr>
-            <th scope="row">20231102206</th>
-            <td>100</td>
-            <td>4</td>
+            <th scope="row">{{obj.id}}</th>
+            <td>{{obj.final_number}}</td>
+            <td>{{obj.final_color}}</td>
             <td>
+              <!--<div class="{{ obj.final_color}}"></div> -->
               <div class="red"></div>
             </td>
           </tr>
-          <tr>
-            <th scope="row">20231102206</th>
-            <td>100</td>
-            <td>4</td>
-            <td>
-              <div class="green"></div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">20231102206</th>
-            <td>100</td>
-            <td>4</td>
-            <td>
-              <div class="violet"></div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">20231102206</th>
-            <td>100</td>
-            <td>4</td>
-            <td>
-              <div class="violet-red"></div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">20231102206</th>
-            <td>100</td>
-            <td>4</td>
-            <td>
-              <div class="violet-green"></div>
-            </td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
 <br><br><br><br>
+
+
 
 {% endblock body %} 
