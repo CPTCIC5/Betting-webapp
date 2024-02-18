@@ -3,6 +3,8 @@ from users.models import Profile
 import random
 from  decimal import Decimal
 from django.utils import timezone
+
+
 class Game(models.Model):
     GAMES = (
         ("Sapre","Sapre"),
@@ -30,10 +32,12 @@ class Game(models.Model):
     @property
     def time_difference(self):
         return (timezone.now() - self.created_at).total_seconds()
-
-
+    
     def __str__(self):
         return f" {self.name} -  {str(self.id)}"
+    
+
+    
     
 
 
