@@ -11,7 +11,6 @@
   </div>
 </div>
 
-
     {% endblock file %}
 
   {% block body %}
@@ -76,7 +75,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="greenvalue"> <input type="text" name="color_prediction" value="Green" class="color" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="greenvalue"> <input type="text" name="color_prediction" value="Green" id="color1" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -156,7 +155,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="redvalue"> <input type="text" name="color_prediction"  value="Red" class="color" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="redvalue"> <input type="text" name="color_prediction"  value="Red" id="color2" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -238,7 +237,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="violetvalue"> <input type="text" name="color_prediction"  value="Voilet" class="color" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="violetvalue"> <input type="text" name="color_prediction"  value="Voilet" id="color3" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -322,7 +321,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="onevalue"> <input type="text" name="number_prediction"  value="1" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="onevalue"> <input type="text" name="number_prediction"  value="1" id="num1" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -404,7 +403,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="twovalue"> <input type="text" name="number_prediction"  value="2" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="twovalue"> <input type="text" name="number_prediction"  value="2" id="num2" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -486,7 +485,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="threevalue"> <input type="text" name="number_prediction"  value="3" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="threevalue"> <input type="text" name="number_prediction"  value="3" id="num3" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -569,7 +568,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="fourvalue"> <input type="text" name="number_prediction"  value="4" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="fourvalue"> <input type="text" name="number_prediction"  value="4" id="num4" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -652,7 +651,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="fivevalue"> <input type="text" name="number_prediction"  value="5" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="fivevalue"> <input type="text" name="number_prediction"  value="5" id="num5" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -734,7 +733,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="sixvalue"> <input type="text" name="number_prediction"  value="6" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="sixvalue"> <input type="text" name="number_prediction"  value="6" id="num6" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -816,7 +815,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="sevenvalue"> <input type="text" name="number_prediction"  value="7" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="sevenvalue"> <input type="text" name="number_prediction"  value="7" id="num7" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -898,7 +897,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="eightvalue"> <input type="text" name="number_prediction"  value="8" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="eightvalue"> <input type="text" name="number_prediction"  value="8" id="num8" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -980,7 +979,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="ninevalue"> <input type="text" name="number_prediction"  value="9" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="ninevalue"> <input type="text" name="number_prediction"  value="9" id="num9" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -1062,7 +1061,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="zerovalue"> <input type="text" name="number_prediction"  value="0" id="" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="zerovalue"> <input type="text" name="number_prediction"  value="0" id="num0" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -1168,7 +1167,5 @@
       </table>
     </div>
 <br><br><br><br>
-
-
 
 {% endblock body %} 
