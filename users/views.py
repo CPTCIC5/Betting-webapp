@@ -58,6 +58,7 @@ def register(request):
 def profile(request,id):
     user= get_object_or_404(User,id=id)
     profile = Profile.objects.get(user=user)
+    
     #recent_orders = profile.objects.filter()
     if request.method == 'POST' and 'title' in request.POST:
         title= request.POST.get('title')
@@ -87,4 +88,5 @@ def login(request):
 
 @login_required
 def precord(request):
-    return render(request,'parityrecord.html')
+    record = get_object_or_404(Profile,user=request.user)
+    return render(request,'parityrecord.html',{'record':record})

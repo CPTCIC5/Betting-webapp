@@ -27,7 +27,7 @@ def parity(request):
         print('total coins of user',user.coins)
         color_prediction = request.POST.get('color_prediction')
         number_prediction = request.POST.get('number_prediction')
-        bet_value = request.POST.get('bet_value','10')
+        bet_value = request.POST.get('bet_value','0')
         #bet_value= request.POST['bet_value']
         print('x',color_prediction)
         print('xy',number_prediction)

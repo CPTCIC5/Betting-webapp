@@ -165,13 +165,15 @@
               <th>Number</th>
               <th>Result</th>
             </tr>
-            <tr>
+            {% for data in profile.player_set.all|slice:":5" %}
+            <tr>  
               <!-- phele 5 -->
-              <td>20231102206</td>
-              <td>100</td>
-              <td>4</td>
-              <td><div class="red"></div></td>
+              <td>{{data.id}}</td>
+              <td>{{data.bet_value}}</td>
+              <td>{{data.game.final_number}}</td>
+              <td><div class="{{data.game.final_color|lower }}"></div></td>
             </tr>
+            {% endfor %}
           </table>
           <center><a href="{% url 'users:precord' %}" class="text-center btn btn-dark">More Records</a><h4 ></h4></center>
           <!-- <div class="container-fluid">

@@ -17,46 +17,16 @@
             </tr>
           </thead>
           <tbody>
+            {% for n in record.player_set.all %}
             <tr>
-              <th scope="row">20231102206</th>
-              <td>100</td>
-              <td>4</td>
+              <th scope="row">{{n.id}}</th>
+              <td>{{n.bet_value}}</td>
+              <td>{{n.game.final_number}}</td>
               <td>
-                <div class="red"></div>
+                <div class="{{n.game.final_color|lower}}"></div>
               </td>
             </tr>
-            <tr>
-              <th scope="row">20231102206</th>
-              <td>100</td>
-              <td>4</td>
-              <td>
-                <div class="green"></div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">20231102206</th>
-              <td>100</td>
-              <td>4</td>
-              <td>
-                <div class="violet"></div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">20231102206</th>
-              <td>100</td>
-              <td>4</td>
-              <td>
-                <div class="violet-red"></div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">20231102206</th>
-              <td>100</td>
-              <td>4</td>
-              <td>
-                <div class="violet-green"></div>
-              </td>
-            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
