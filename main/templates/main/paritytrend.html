@@ -11,10 +11,10 @@
         <div class="parity p-3" style="display: flex;flex-direction: row;align-items: center;justify-content: space-evenly;box-shadow: 1px 2px 10px rgb(172, 170, 170);">
           <div class="period">
             <p><i class="fa-solid fa-calendar-days"></i> &nbsp; <strong>Period:</strong> </p>
-            <span class="parspans">20231102206</span>
+            <span class="parspans">NaN</span>
           </div>
           <div class="balance px-3 bye py-2 text-center">
-            <p>&nbsp;User: +91-900000000</p>
+            <p>&nbsp;User: {{user.phone_number}}</p>
               <h5>Parity Record</h5>
           </div>
             <div id="timer">
@@ -28,9 +28,9 @@
       <hr class="mt-2">
       <h4 class="text-center">Result</h4><hr>
       <div class="d-flex flex-row justify-content-evenly align-items-center">
-        <p class="redresult bg-danger text-light p-2 rounded">Red :85</p>
-        <p class="violetresult text-light p-2 rounded" style="background-color: rgb(192, 71, 192);">Violet :55</p>
-        <p class="greenresult bg-success text-light p-2 rounded">Green :75</p>
+        <p class="redresult bg-danger text-light p-2 rounded">Red : {{red_filter}}</p>
+        <p class="violetresult text-light p-2 rounded" style="background-color: rgb(192, 71, 192);">Violet :{{voilet_filter}}</p>
+        <p class="greenresult bg-success text-light p-2 rounded">Green : {{green_filter}}</p>
       </div>
 
       <div class="buttons">
@@ -38,424 +38,26 @@
         <p class="btns btnprogress">Progress View</p>
       </div>
 
-
-      <!-- <div class="container-fluid parcols" style="overflow-x: scroll;width: 100%;">
-        <div class="row">
-          <div class="col">
-           <b>1.</b>
-          </div>
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-          <div class="col">
-            <div class="greencol">
-              1
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-          
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-        </div>
-
-        <div class="row">
-          <div class="col">
-           <b>2.</b>
-          </div>
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-          <div class="col">
-            <div class="greencol">
-              1
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-          
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="redcol">
-              2
-            </div>
-          </div>
-
-          
-        </div>
-      
-      </div> -->
-      <table class="table table-bordered text-center parcols w-100 table-view"  >
+        <table class="table table-bordered text-center parcols w-100 table-view"  >
         <thead style="overflow-x: scroll;width: 100%;">
           <tr >
-            <th scope="col" >1</th>
             <th scope="col"><div>
-              <div class="redcol text-center" >2</div>
-            </div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-
-
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
+            {% for n in first_25 %}
+            <th scope="col">{{n.final_number}}</th>
+            {% endfor %}
           </tr>
 
           <tr >
-            <th scope="col" >2</th>
             <th scope="col"><div>
-              <div class="redcol text-center" >2</div>
-            </div></th>
-            <th scope="col"><div class="redcol text-center">6</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"><div class="greencol text-center">1</div></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="greencol text-center">3</div></th>
-            <th scope="col"><div class="redcol text-center">4</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="violet-greencol text-center">5</div></th>
-            <th scope="col"><div class="violet-redcol text-center">0</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
-            <th scope="col"><div class="redcol text-center">2</div></th>
+            {% for m in next_25 %}
+            <th scope="col">{{m.final_number}}</th>
+            {% endfor %}
           </tr>
 
           <tr >
-            <th scope="col" >3</th>
-            <th scope="col"><div>
-              <div class="redcol text-center" >2</div>
-            </div></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col"><div>
-              <div class="redcol text-center" >2</div>
-            </div></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
-            <th scope="col" ></th>
+            {% for l in last_25 %}
+            <th scope="col">{{l.final_number}}</th>
+            {% endfor %}
             </tr>
         </thead>
       

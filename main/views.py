@@ -15,6 +15,7 @@ def parity(request):
 
     
     previous_object = Game.objects.filter(id__lt=recent_objects.id).order_by('-id').last()
+    print(previous_object)
     recent_results = Game.objects.filter(name=recent_objects.name).order_by('-id')[1:6]
     #print(recent_results)
     #recent_objects = Game.objects.order_by('-id')[:3]
@@ -54,6 +55,13 @@ def parity(request):
 
 
 @login_required
-def trends(request):
-    x1=Game.objects.all()
-    return render(request,'main/paritytrend.html')
+def trends(request,game_type):
+    x1=Game.objects.filter(name=game_type)
+    red_filter= x1.filter(final_color='Red').count()
+    green_filter= x1.filter(final_color='Green').count()
+    voilet_filter=x1.filter(final_color='Voilet').count()
+    first_25 = x1.order_by('-created_at')[:25]
+    next_25 = x1.order_by('-created_at')[25:50]
+    last_25= x1.order_by('-created_at')[50:75]
+    return render(request,'main/paritytrend.html',{'x1':x1,'red_filter':red_filter,'green_filter':green_filter,'voilet_filter':voilet_filter,
+                                                   'first_25':first_25,'next_25':next_25,'last_25':last_25})

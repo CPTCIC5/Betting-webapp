@@ -6,5 +6,5 @@ app_name='main'
 
 urlpatterns = [
     path('parity/', views.parity, name='parity'),
-    path('trends/',views.trends,name='trend') 
+    path('trends/<str:game_type>/',views.trends,name='trend') 
 ]

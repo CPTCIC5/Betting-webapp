@@ -5,9 +5,8 @@
     <!-- <marquee behavior="" direction="" style="background-image: linear-gradient(to right,blue,rgb(119, 0, 255));  padding: 3px;color: white;">Winner is <span style="color: red;text-shadow: 1px 1px black;">Red</span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -->
 <div class="marquee marquee_hoverpause marquee--borders" style="--duration: 10s;   transform: skewY(-0deg);">
   <div class="marquee__group">
-    <p class="h4">Colour Result is Red 🔴✨ </p>&nbsp;
-    <p class="h4" aria-hidden="true">Total Price is 450000 ✨</p>&nbsp;
-    <p class="h4" aria-hidden="true">Number Result is 4✨</p>&nbsp;
+    <p class="h4">Colour Result is {{previous_object.final_color}}✨ </p>&nbsp;
+    <p class="h4" aria-hidden="true">Number Result is {{previous_object.final_number}}✨</p>&nbsp;
   </div>
 </div>
 
@@ -33,7 +32,7 @@
             <p>&nbsp;User: +91-{{user.phone_number}}</p>
               <h5 class="mb-3">Available Coins:{{user.profile.coins}}</h5>
               <a href="{% static 'images/payment.jpeg' %}"  style="text-decoration: none;"> <button class="btn btn-success">Recharge</button> </a>
-             <a href="{% url 'main:trend' %}" style="text-decoration: none;"> <button class="btn btn-info text-light">Trends</button></a>
+             <a href="{% url 'main:trend' recent_objects.name %}" style="text-decoration: none;"> <button class="btn btn-info text-light">Trends</button></a>
           </div>
             <!--<div id="timer" class="{{recent_objects.created_at}}"> -->
               <div id="timer" data-start-time='{{ recent_objects.time_difference }}'></div>
@@ -75,7 +74,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="greenvalue"> <input type="text" name="color_prediction" value="Green" id="color1" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="greenvalue"> <input type="text" name="color_prediction" value="Green" id="color1" style="border: none; text-align: center; outline: none;">  </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>

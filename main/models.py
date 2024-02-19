@@ -12,7 +12,8 @@ class Game(models.Model):
         ("Bcone","Bcone")
     )
 
-    COLORS = [('Green', 'Green'), ('Red', 'Red'), ('Voilet-Green','Voilet-Green'), ('Voilet-Red', 'Voilet-Red')]
+    COLORS = [('Green', 'Green'), ('Red', 'Red'),('Voilet', 'Voilet')]
+    #,('Voilet-Green','Voilet-Green'), ('Voilet-Red', 'Voilet-Red')
     NUMBERS = [('1','One'), ('2','Two'), ('3','Three'), ('4','Four'), ('5','Five'), ('6','Six'),
                ('7', 'Seven'), ('8','Eight'), ('9','Nine'), ('0','Ten')]
     
@@ -35,6 +36,9 @@ class Game(models.Model):
     
     def __str__(self):
         return f" {self.name} -  {str(self.id)}"
+    
+    class Meta:
+        ordering = ['-created_at','-name']
     
 
     

@@ -57,6 +57,8 @@ def register(request):
 @login_required
 def profile(request,id):
     user= get_object_or_404(User,id=id)
+    profile = Profile.objects.get(user=user)
+    #recent_orders = profile.objects.filter()
     if request.method == 'POST' and 'title' in request.POST:
         title= request.POST.get('title')
         suggestion = request.POST.get('suggestion')
@@ -66,7 +68,7 @@ def profile(request,id):
         entry.save()
         messages.success(request,'Response Sent!, Team will get back to you within 24 hours.')
         return HttpResponseRedirect(reverse('home:index'))
-    return render(request,'profile.html',{'user':user})
+    return render(request,'profile.html',{'user':user,'profile':profile})
 
 def login(request):
     if request.method == 'POST':
