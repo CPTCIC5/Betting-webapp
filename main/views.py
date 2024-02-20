@@ -25,6 +25,7 @@ def parity(request):
         game= recent_objects
         user = request.user.profile
         print('total coins of user',user.coins)
+        print('post', request.POST)
         color_prediction = request.POST.get('color_prediction')
         number_prediction = request.POST.get('number_prediction')
         bet_value = request.POST.get('bet_value','0')
