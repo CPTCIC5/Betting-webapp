@@ -40,7 +40,7 @@
         <div class="btns mx-5">
 
 
-<form  method="post" id="formm">
+<form  method="post" id="formm" onsubmit="subb()">
 {% csrf_token %} 
 <!-- green --> <!-- color prediction, bet_value -->
 <div class="modal fade" id="green" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -1166,5 +1166,26 @@
       </table>
     </div>
 <br><br><br><br>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("#formm");
 
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("color_prediction", "...");
+    formData.append("number_prediction", "3");
+    formData.append("bet_value", "2");
+    console.log("submitted");
+    fetch("/game/parity/", {
+      method: "POST",
+      body: formData,
+      headers: {
+        'X-CSRFToken': '{{ csrf_token }}' // Include CSRF token
+      }
+    });
+  });
+})
+</script>
 {% endblock body %} 

@@ -41,15 +41,11 @@ class Game(models.Model):
         ordering = ['-created_at','-name']
     
 
-    
-    
-
-
 class Player(models.Model):
     game = models.ForeignKey(Game,on_delete=models.CASCADE)
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    color_prediction = models.CharField(max_length=20, choices=Game.COLORS)
-    number_prediction = models.CharField(max_length=100, choices=Game.NUMBERS)
+    color_prediction = models.CharField(max_length=20, choices=Game.COLORS,blank=True)
+    number_prediction = models.CharField(max_length=100, choices=Game.NUMBERS,blank=True)
     bet_value= models.DecimalField(max_digits=5,decimal_places=2)
     
     is_correct_prediction = models.BooleanField(default=False)

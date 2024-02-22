@@ -28,12 +28,12 @@ def parity(request):
         print('post', request.POST)
         color_prediction = request.POST.get('color_prediction')
         number_prediction = request.POST.get('number_prediction')
-        bet_value = request.POST.get('bet_value','0')
+        bet_value = request.POST.get('bet_value',10)
         #bet_value= request.POST['bet_value']
         print('x',color_prediction)
         print('xy',number_prediction)
         print('xyz',bet_value)
-        if bet_value is not None and Decimal(bet_value) <= user.coins:
+        if bet_value is not None and Decimal(bet_value) <= Decimal(user.coins):
             x1=Player(game=game,user=user,
                                     color_prediction=color_prediction,
                                     number_prediction=number_prediction,
