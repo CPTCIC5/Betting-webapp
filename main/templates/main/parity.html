@@ -40,7 +40,7 @@
         <div class="btns mx-5">
 
 
-<form  method="post" id="formm" onsubmit="subb()">
+<form  method="post" id="formm">
 {% csrf_token %} 
 <!-- green --> <!-- color prediction, bet_value -->
 <div class="modal fade" id="green" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -1168,15 +1168,30 @@
 <br><br><br><br>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+  let color_prediction;
+  let number_prediction;
+  let bet_value =  document.getElementByName('bet_value').innerHTML
+
+  function setBetValue(event) {
+  bet_value = event.target.value
+}
+/*
+document.getElementById("bet_value_input_1").addEventListener("change", setBetValue)
+document.getElementById("bet_value_input_2").addEventListener("change", setBetValue)
+document.getElementById("bet_value_input_3").addEventListener("change", setBetValue)
+document.getElementById("bet_value_input_4").addEventListener("change", setBetValue)
+document.getElementById("bet_value_input_").addEventListener("change", setBetValue)
+*/
+
   const form = document.querySelector("#formm");
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const formData = new FormData();
-    formData.append("color_prediction", "...");
-    formData.append("number_prediction", "3");
-    formData.append("bet_value", "2");
+    formData.append("color_prediction", color_prediction);
+    formData.append("number_prediction", number_prediction);
+    formData.append("bet_value", bet_value);
     console.log("submitted");
     fetch("/game/parity/", {
       method: "POST",
