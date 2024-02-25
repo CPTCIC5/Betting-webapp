@@ -60,7 +60,7 @@ def trends(request,game_type):
     x1=Game.objects.filter(name=game_type)
     red_filter= x1.filter(final_color='Red').count()
     green_filter= x1.filter(final_color='Green').count()
-    voilet_filter=x1.filter(final_color='Voilet').count()
+    voilet_filter=x1.filter(final_color='Violet').count()
     first_25 = x1.order_by('-created_at')[:25]
     next_25 = x1.order_by('-created_at')[25:50]
     last_25= x1.order_by('-created_at')[50:75]

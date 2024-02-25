@@ -12,7 +12,7 @@ class Game(models.Model):
         ("Bcone","Bcone")
     )
 
-    COLORS = [('Green', 'Green'), ('Red', 'Red'),('Voilet', 'Voilet')]
+    COLORS = [('Green', 'Green'), ('Red', 'Red'),('Violet', 'Violet')]
     #,('Voilet-Green','Voilet-Green'), ('Voilet-Red', 'Voilet-Red')
     NUMBERS = [('1','One'), ('2','Two'), ('3','Three'), ('4','Four'), ('5','Five'), ('6','Six'),
                ('7', 'Seven'), ('8','Eight'), ('9','Nine'), ('0','Ten')]

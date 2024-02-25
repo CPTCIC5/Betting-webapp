@@ -236,7 +236,7 @@
               <div class="d-flex flex-row align-items-center justify-content-evenly">
                 <i class="fa-solid fa-plus bg-dark p-3 text-light" style="border-radius: 50%;cursor: pointer;" onclick="inc10()"></i> 
                 
-                <span class="value" id="violetvalue"> <input type="text" name="color_prediction"  value="Voilet" id="color3" style="border: none; text-align: center; outline: none;"> </span>
+                <span class="value" id="violetvalue"> <input type="text" name="color_prediction"  value="Violet" id="color3" style="border: none; text-align: center; outline: none;"> </span>
                 
                 <i class="fa-solid fa-minus bg-dark p-3 text-light"  style="border-radius: 50%; cursor: pointer;" onclick="dec10()"></i>
               </div><br>
@@ -1201,6 +1201,8 @@ document.getElementById('color3').addEventListener("click",setColorPredictionVal
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    console.log('color"s prediction',color_prediction)
+    console.log('number"s prediction',number_prediction)
     const formData = new FormData();
     formData.append("color_prediction", color_prediction);
     formData.append("number_prediction", number_prediction);
